@@ -27,6 +27,8 @@ $stmt->execute();
         <div class="row mt">
             <div class="col-lg-12">
                 <div class="content-panel">
+                    <a type="button" href="email.php"  class="btn btn-round btn-warning pull-right">Send Email</a>
+
                     <h4><i class="fa fa-angle-right"></i> Clients Table</h4>
                     <section id="unseen">
                         <table class="table table-bordered table-striped table-condensed">
@@ -82,13 +84,18 @@ $stmt->execute();
                 </div><!-- /content-panel -->
             </div><!-- /col-lg-4 -->
         </div><!-- /row -->
-
         </div><!-- /row -->
-
     </section><! --/wrapper -->
 </section><!-- /MAIN CONTENT -->
+
 <?php
 $stmt->closeCursor();
-include('footer.php') ?>
+
+
+
+include('footer.php')
+
+
+?>
 </body>
 </html>

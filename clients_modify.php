@@ -198,4 +198,6 @@ Suburb='$_POST[Suburb]', State='$_POST[State]', Mobile='$_POST[Mobile]', Mailing
         header("Location: clients_index.php");
         break;
         $stmt->closeCursor();
-} ?>
+}
+include('footer.php');
+?>

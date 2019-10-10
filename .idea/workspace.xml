@@ -2,18 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc18a84d-bfd5-481e-ad55-2aaab629206c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source_Code.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/categories_index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories_modify.php" beforeDir="false" afterPath="$PROJECT_DIR$/categories_modify.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clients_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/clients_index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients_modify.php" beforeDir="false" afterPath="$PROJECT_DIR$/clients_modify.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/documentation.php" beforeDir="false" afterPath="$PROJECT_DIR$/documentation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/images_index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/products_add.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/products_index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products_modify.php" beforeDir="false" afterPath="$PROJECT_DIR$/products_modify.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products_multiple.php" beforeDir="false" afterPath="$PROJECT_DIR$/products_multiple.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/projects_index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/products_view.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +38,23 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="FIT2104" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="FIT2104" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="FIT2104" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="s28405692: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="Git.Settings">
@@ -74,17 +91,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@13592666" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@13592666" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@110f9153" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -104,6 +111,8 @@
       <workItem from="1570403994593" duration="40447000" />
       <workItem from="1570492116656" duration="10011000" />
       <workItem from="1570519747124" duration="17600000" />
+      <workItem from="1570699779158" duration="269000" />
+      <workItem from="1570700554656" duration="3951000" />
     </task>
     <servers />
   </component>
@@ -115,7 +124,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

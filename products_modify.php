@@ -153,7 +153,7 @@ switch($_GET["Action"]) {
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Product Categories</label>
                                 <div class="col-sm-10" style="font-size: 15px">
-                                    <table>
+                                    <table class="table custom-check">
                                         <tbody>
                                         <?php
                                         while($caterow = $catestmt->fetch())
@@ -239,3 +239,4 @@ switch($_GET["Action"]) {
 }
 
 ?>
+<?php include('footer.php')?>

@@ -90,7 +90,7 @@ $pcstmt->execute();
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Product Categories</label>
                             <div class="col-sm-10" style="font-size: 15px">
-                                <table>
+                                <table class="table custom-check">
                                     <tbody>
                                                 <?php
                                                 while($pcrow=$pcstmt->fetch())
@@ -127,3 +127,5 @@ $pcstmt->execute();
         </div><!-- /row -->
     </section>
 </section>
+
+<?php include('footer.php')?>

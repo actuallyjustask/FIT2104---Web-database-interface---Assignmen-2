@@ -147,5 +147,5 @@ switch($_GET["Action"]) {
             header("Location: categories_index.php");
         }
 }
-
+include('footer.php')
 ?>

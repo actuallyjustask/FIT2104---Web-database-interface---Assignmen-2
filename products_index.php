@@ -108,7 +108,6 @@ $stmt->execute();
             </div><!-- /col-lg-4 -->
         </div><!-- /row -->
         </div><!-- /row -->
-
     </section><! --/wrapper -->
 </section><!-- /MAIN CONTENT -->
 <?php include('footer.php');
