@@ -30,13 +30,8 @@ if (!isset($_POST["check"]))
             <div class="col-lg-12">
                 <div class="form-panel">
                     <h4><i class="fa fa-angle-right"></i> Send Email</h4>
-                    <form class="form-horizontal style-form" method="post" action="email.php">
-<!--                        <div class="form-group">-->
-<!--                            <label class="col-sm-1 control-label">To</label>-->
-<!--                            <div class="col-sm-4">-->
-<!--                                <input type="text" class="form-control" name="to" value="">-->
-<!--                            </div>-->
-<!--                        </div>-->
+                    <form class="form-horizontal style-form" method="post" action="clients_email.php">
+
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">To</label>
