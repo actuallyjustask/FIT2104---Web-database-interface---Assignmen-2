@@ -27,7 +27,7 @@ $stmt->execute();
         <div class="row mt">
             <div class="col-lg-12">
                 <div class="content-panel">
-                    <a type="button" href="email.php"  class="btn btn-round btn-warning pull-right">Send Email</a>
+                    <a type="button" href="clients_email.php" class="btn btn-round btn-warning pull-right">Send Email</a>
 
                     <h4><i class="fa fa-angle-right"></i> Clients Table</h4>
                     <section id="unseen">
