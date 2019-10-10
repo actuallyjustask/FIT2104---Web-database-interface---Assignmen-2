@@ -20,7 +20,7 @@ $clientsquery="SELECT * FROM client WHERE Mailinglist='1';";
 $clientsstmt = $dbh->prepare($clientsquery);
 $clientsstmt->execute();
 
-if (!isset($_POST["check"]))
+if (!isset($_POST["check"]) && !isset($_POST["message"]))
 {
     ?>
 <section id="main-content">
