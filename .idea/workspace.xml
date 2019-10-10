@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc18a84d-bfd5-481e-ad55-2aaab629206c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9db62ff3-c254-472e-8179-d5f4bb782a32.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9db62ff3-c254-472e-8179-d5f4bb782a32.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source_Code.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source_Code.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/clients_add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients_modify.php" beforeDir="false" afterPath="$PROJECT_DIR$/clients_modify.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/email.php" beforeDir="false" afterPath="$PROJECT_DIR$/email.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products_modify.php" beforeDir="false" afterPath="$PROJECT_DIR$/products_modify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/products_view.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +118,7 @@
       <workItem from="1570492116656" duration="10011000" />
       <workItem from="1570519747124" duration="17600000" />
       <workItem from="1570699779158" duration="269000" />
-      <workItem from="1570700554656" duration="12077000" />
+      <workItem from="1570700554656" duration="13755000" />
     </task>
     <servers />
   </component>

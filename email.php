@@ -4,9 +4,11 @@ include('session.php');
 include('nav.php');
 ?>
 
-<html>
-<head></head>
-<body>
+<head>
+    <title>Clients</title>
+
+</head>
+
 
 <?php
 include("connection.php");
@@ -86,6 +88,7 @@ if (!isset($_POST["check"]))
         </div><!-- /row -->
     </section><! --/wrapper -->
 </section><!-- /MAIN CONTENT -->
+</body>
 
     <?php
 }
@@ -104,17 +107,34 @@ else
     $to = $email_string;
     $msg = $_POST["message"];
     $subject = $_POST["subject"];
+
     if(mail($to, $subject, $msg, $from))
-    {
-        echo "Mail Sent";
+    { ?>
+        <section id="main-content">
+            <section class="wrapper">
+                <h3 style="color: green">Mail Sent!</h3>
+            </section>
+        </section>
+        <?php
     }
     else
-    {
-        echo "Error Sending Mail";
-    }
+    { ?>
+        <section id="main-content">
+            <section class="wrapper">
+      <h4 style="color: red">Error Sending Mail!</h4>
+        <div>
+            <p></p>
+            <button class="btn btn-primary" onclick="goBack()">Go Back</button>
+            <script>
+                function goBack() {
+                    window.history.back();
+                }
+            </script>
+        </div>
+        </section></section>
+      <?php  }
+
 }
 
 include('footer.php');
 ?>
-</body>
-</html>
