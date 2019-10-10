@@ -61,34 +61,34 @@ $pcstmt->execute();
                     <form class="form-horizontal style-form" action="products_view.php" method="GET">
 
                         <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Name</label>
+                            <label class="col-sm-2 control-label">Name</label>
                             <div class="col-sm-10">
                                 <p class="form-control-static"><?php echo $row->Name; ?></p>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Purchase Price</label>
+                            <label class="col-sm-2 control-label">Purchase Price</label>
                             <div class="col-sm-10">
                                 <p class="form-control-static"><?php echo $row->Purchase_Price; ?></p>
 
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Sale Price</label>
+                            <label class="col-sm-2 control-label">Sale Price</label>
                             <div class="col-sm-10">
                                 <p class="form-control-static"><?php echo $row->Sale_Price; ?></p>
 
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Country of Origin</label>
+                            <label class="col-sm-2 control-label">Country of Origin</label>
                             <div class="col-sm-10">
                                 <p class="form-control-static"><?php echo $row->Country_of_Origin; ?></p>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Product Categories</label>
+                            <label class="col-sm-2 control-label">Product Categories</label>
                             <div class="col-sm-10" style="font-size: 15px">
                                 <table class="table custom-check">
                                     <tbody>

@@ -992,6 +992,7 @@
     <column id="247" parent="228" name="Email">
       <Position>8</Position>
       <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="248" parent="228" name="Mobile">

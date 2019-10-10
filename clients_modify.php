@@ -191,13 +191,33 @@ switch($_GET["Action"]) {
         <?php
         break;
     case "ConfirmUpdate":
-        $query="UPDATE client set Fname='$_POST[Fname]', Lname='$_POST[Lname]', Street='$_POST[Street]', 
-Suburb='$_POST[Suburb]', State='$_POST[State]', Mobile='$_POST[Mobile]', Mailinglist='$_POST[Mailinglist]' WHERE ID =".$_GET["ID"];
+        $query="UPDATE client set Fname=NULLIF('$_POST[Fname]', ''), Lname=NULLIF('$_POST[Lname]', ''), Street='$_POST[Street]', 
+Suburb='$_POST[Suburb]', State='$_POST[State]', Postcode='$_POST[Postcode]', Email=NULLIF('$_POST[Email]', ''), Mobile='$_POST[Mobile]', Mailinglist='$_POST[Mailinglist]' WHERE ID =".$_GET["ID"];
         $stmt = $dbh->prepare($query);
-        $stmt->execute();
-        header("Location: clients_index.php");
-        break;
-        $stmt->closeCursor();
+        if(!$stmt->execute())
+        {
+            $err= $stmt->errorInfo(); ?>
+            <section id="main-content">
+                <section class="wrapper">
+                    <h4>
+                        <?php
+                        echo "Error adding record to database – contact System Administrator
+    Error is: <b>".$err[2]."</b>"; ?></h4>
+                    <div>
+                        <button class="btn btn-default" onclick="goBack()">Go Back</button>
+                        <script>
+                            function goBack() {
+                                window.history.back();
+                            }
+                        </script></div>
+                </section></section>
+
+            <?php
+        }
+        else {
+            $stmt->closeCursor();
+            header("Location: clients_index.php");
+        }
 }
 include('footer.php');
 ?>

@@ -126,32 +126,32 @@ switch($_GET["Action"]) {
                         <form class="form-horizontal style-form" method="post" action="products_modify.php?ID=<?php echo $_GET["ID"]; ?>&Action=ConfirmUpdate" >
 
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Name</label>
+                                <label class="col-sm-2 control-label">Name</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="Name" value="<?php echo $row->Name; ?>">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Purchase Price</label>
+                                <label class="col-sm-2 control-label">Purchase Price</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="PurchasePrice" value="<?php echo $row->Purchase_Price; ?>">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Sale Price</label>
+                                <label class="col-sm-2 control-label">Sale Price</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="SalePrice" value="<?php echo $row->Sale_Price; ?>">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Country of Origin</label>
+                                <label class="col-sm-2 control-label">Country of Origin</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="CountryofOrigin" value="<?php echo $row->Country_of_Origin; ?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Product Categories</label>
+                                <label class="col-sm-2 control-label">Product Categories</label>
                                 <div class="col-sm-10" style="font-size: 15px">
                                     <table class="table custom-check">
                                         <tbody>

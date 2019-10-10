@@ -120,7 +120,7 @@ else {
 
     $query = "INSERT INTO client (Fname, Lname, Street, Suburb, State, Postcode,
                 Email, Mobile, Mailinglist) VALUES (NULLIF('$_POST[Fname]', ''), NULLIF('$_POST[Lname]', ''), '$_POST[Street]'
-                , '$_POST[Suburb]', '$_POST[State]', '$_POST[Postcode]', '$_POST[Email]', '$_POST[Mobile]', '$_POST[Mailinglist]')";
+                , '$_POST[Suburb]', '$_POST[State]', '$_POST[Postcode]', NULLIF('$_POST[Email]', ''), '$_POST[Mobile]', '$_POST[Mailinglist]')";
     $stmt = $dbh->prepare($query);
     if(!$stmt->execute())
     {
