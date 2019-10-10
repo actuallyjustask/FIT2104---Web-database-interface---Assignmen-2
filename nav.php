@@ -121,6 +121,17 @@
                 <li class="sub-menu dcjq-parent-li">
                     <a href="javascript:;" class="dcjq-parent active">
                         <i class="fa fa-book"></i>
+                        <span>Images</span>
+                        <span class="dcjq-icon"></span><span class="dcjq-icon"></span><span class="dcjq-icon"></span></a>
+                    <ul class="sub" style="overflow: hidden; display: block;">
+                        <li><a href="images_index.php">View Images</a></li>
+                        <li><a href="images_add.php">Add Images</a></li>
+                    </ul>
+                </li>
+
+                <li class="sub-menu dcjq-parent-li">
+                    <a href="javascript:;" class="dcjq-parent active">
+                        <i class="fa fa-book"></i>
                         <span>Documentation</span>
                         <span class="dcjq-icon"></span><span class="dcjq-icon"></span><span class="dcjq-icon"></span></a>
                     <ul class="sub" style="overflow: hidden; display: block;">
@@ -128,6 +139,8 @@
 
                     </ul>
                 </li>
+
+
 
             </ul>
             <!-- sidebar menu end-->

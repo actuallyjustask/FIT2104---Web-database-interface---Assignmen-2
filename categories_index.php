@@ -16,7 +16,7 @@ include('nav.php');
 include("connection.php");
 $dsn= "mysql:host=$Host;dbname=$DB";
 $dbh= new PDO($dsn, $Uname, $Pword);
-$stmt = $dbh->prepare("select * from category");
+$stmt = $dbh->prepare("select * from category order by Name");
 $stmt->execute();
 ?>
 <!--main content start-->
@@ -46,11 +46,9 @@ $stmt->execute();
                                 <tr>
                                     <td><?php echo $row["ID"]; ?></td>
                                     <td><?php echo $row["Name"]; ?></td><td>
-                                        <a href="categories_modify.php?ID= <?php echo $row["ID"]; ?>
-                                        &Action=Update"><button class="btn btn-primary btn-xs">
+                                        <a href="categories_modify.php?ID=<?php echo $row["ID"]; ?>&Action=Update"><button class="btn btn-primary btn-xs">
                                                 <i class="fa fa-pencil" title="edit"></i></button>
-                                            <a href="categories_modify.php?ID= <?php echo
-                                            $row["ID"]; ?> &Action=Delete"><button class="btn btn-danger btn-xs">
+                                            <a href="categories_modify.php?ID=<?php echo $row["ID"]; ?>&Action=Delete"><button class="btn btn-danger btn-xs">
                                                     <i class="fa fa-trash-o " title="delete"></i></button>
 
                                     </td>

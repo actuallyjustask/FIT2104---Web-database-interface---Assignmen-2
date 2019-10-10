@@ -3,6 +3,16 @@ ob_start();
 include('session.php');
 include('nav.php');
 
+function fCheck($value1, $value2)
+{
+    $strCheck = "";
+    if($value1 == $value2)
+    {
+        $strCheck = " checked";
+    }
+    return $strCheck;
+}
+
 ?>
 <script language = "javascript">
     function confirm_delete()
@@ -13,6 +23,11 @@ include('nav.php');
 <?php
 //include and connection statements go here
 $query="SELECT * FROM product WHERE ID =".$_GET["ID"];
+$catequery="SELECT * FROM category ORDER BY Name";
+$pcquery= "SELECT category.ID from product join product_category on product.ID = product_category.product_id join category on category.ID=product_category.Category_id
+Where product.ID = $_GET[ID] ORDER BY product.Name";
+
+
 
 include("connection.php");
 $dsn= "mysql:host=$Host;dbname=$DB";
@@ -20,6 +35,13 @@ $dbh= new PDO($dsn, $Uname, $Pword);
 $stmt = $dbh->prepare($query);
 $stmt->execute();
 $row=$stmt->fetchObject();
+
+$catestmt = $dbh->prepare($catequery);
+$catestmt->execute();
+
+
+
+
 
 switch($_GET["Action"]) {
     case "Delete":
@@ -56,6 +78,12 @@ switch($_GET["Action"]) {
         $query="DELETE FROM product WHERE ID =".$_GET["ID"];
 
         $stmt = $dbh->prepare($query);
+
+        $pc_del_query = "DELETE FROM product_category WHERE product_id = $_GET[ID];";
+        $pc_del_stmt = $dbh->prepare($pc_del_query);
+        $pc_del_stmt->execute();
+
+
         if($stmt->execute())
         {
             ?>
@@ -122,12 +150,44 @@ switch($_GET["Action"]) {
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Product Categories</label>
+                                <div class="col-sm-10" style="font-size: 15px">
+                                    <table>
+                                        <tbody>
+                                        <?php
+                                        while($caterow = $catestmt->fetch())
+                                        {
+                                            $pcstmt = $dbh->prepare($pcquery);
+                                            $pcstmt->execute();
+                                            ?>
+                                        <tr>
+                                            <td>
+                                                <span class="check"><input type="checkbox" name="check[]" value = "<?php echo $caterow['ID']; ?>" class="checked" <?php
+                                                    //checked string
+                                                    while($pcrow = $pcstmt->fetch())
+                                                    {
+                                                        echo fCheck($caterow['ID'],$pcrow['ID']);
+
+                                                    }
+                                                    ?>></span>
+                                                <?php echo $caterow["Name"];?>
+                                            </td>
+                                        </tr>
+                                        <?php }
+                                        $pcstmt->closeCursor();
+                                        ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                             <p align="left">
                                 <button type="submit" class="btn btn-theme">Update Product</button>
                                 <input type="button" value="Return to List" class="btn btn-theme" style="background-color: darkorange" OnClick="window.location='products_index.php'">
                             </p>
 
                         </form>
+
                     </div>
                 </div><!-- col-lg-12-->
             </div><!-- /row -->
@@ -138,6 +198,15 @@ switch($_GET["Action"]) {
     case "ConfirmUpdate":
         $query="UPDATE product set Name='$_POST[Name]', Purchase_Price='$_POST[PurchasePrice]', Sale_Price='$_POST[SalePrice]', Country_of_Origin='$_POST[CountryofOrigin]' WHERE ID =".$_GET["ID"];
         $stmt = $dbh->prepare($query);
+
+        $pc_del_query = "DELETE FROM product_category WHERE product_id = $_GET[ID];";
+        $pc_del_stmt = $dbh->prepare($pc_del_query);
+        $pc_del_stmt->execute();
+        foreach ($_POST["check"] as $item) {
+           $pc_add_query = "INSERT INTO product_category (product_id, category_id) VALUES (NULLIF('$_GET[ID]', ''),NULLIF($item, ''))";
+           $pc_add_stmt = $dbh->prepare($pc_add_query);
+            $pc_add_stmt->execute();
+        }
 
         if(!$stmt->execute())
         {
@@ -161,6 +230,10 @@ switch($_GET["Action"]) {
         }
         else {
             $stmt->closeCursor();
+            $catestmt->closeCursor();
+            $pc_del_stmt->closeCursor();
+            $pc_add_stmt->closeCursor();
+
             header("Location: products_index.php");
         }
 }

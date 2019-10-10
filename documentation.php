@@ -8,7 +8,7 @@ include('nav.php');
 <html lang="en">
 
 <head>
-
+<title>Documentation</title>
 </head>
 
 <body>

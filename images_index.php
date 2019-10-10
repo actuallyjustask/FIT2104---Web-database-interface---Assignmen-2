@@ -8,7 +8,7 @@ include('nav.php');
 <html lang="en">
 <head>
     <link href="assets/css/table-responsive.css" rel="stylesheet">
-    <title>Projects</title>
+    <title>Categories</title>
 </head>
 
 <body>
@@ -16,25 +16,23 @@ include('nav.php');
 include("connection.php");
 $dsn= "mysql:host=$Host;dbname=$DB";
 $dbh= new PDO($dsn, $Uname, $Pword);
-$stmt = $dbh->prepare("select * from project order by Description");
+$stmt = $dbh->prepare("select * from category");
 $stmt->execute();
 ?>
 <!--main content start-->
 <section id="main-content">
     <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i>Projects</h3>
+        <h3><i class="fa fa-angle-right"></i>Categories</h3>
         <div class="row mt">
             <div class="col-lg-12">
                 <div class="content-panel">
-                    <h4><i class="fa fa-angle-right"></i> Projects Table</h4>
+                    <h4><i class="fa fa-angle-right"></i> Categories Table</h4>
                     <section id="unseen">
                         <table class="table table-bordered table-striped table-condensed">
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Description</th>
-                                <th>Country</th>
-                                <th>City</th>
+                                <th>Name</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -47,13 +45,10 @@ $stmt->execute();
                                 ?>
                                 <tr>
                                     <td><?php echo $row["ID"]; ?></td>
-                                    <td><?php echo $row["Description"]; ?></td>
-                                    <td><?php echo $row["Country"]; ?></td>
-                                    <td><?php echo $row["City"]; ?></td>
-                                    <td>
-                                        <a href="projects_modify.php?ID=<?php echo $row["ID"]; ?>&Action=Update"><button class="btn btn-primary btn-xs">
+                                    <td><?php echo $row["Name"]; ?></td><td>
+                                        <a href="categories_modify.php?ID=<?php echo $row["ID"]; ?>&Action=Update"><button class="btn btn-primary btn-xs">
                                                 <i class="fa fa-pencil" title="edit"></i></button>
-                                            <a href="projects_modify.php?ID=<?php echo
+                                            <a href="categories_modify.php?ID=<?php echo
                                             $row["ID"]; ?>&Action=Delete"><button class="btn btn-danger btn-xs">
                                                     <i class="fa fa-trash-o " title="delete"></i></button>
 

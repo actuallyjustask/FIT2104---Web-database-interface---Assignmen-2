@@ -16,7 +16,7 @@ include('nav.php');
 include("connection.php");
 $dsn= "mysql:host=$Host;dbname=$DB";
 $dbh= new PDO($dsn, $Uname, $Pword);
-$stmt = $dbh->prepare("select * from client");
+$stmt = $dbh->prepare("select * from client order by Lname");
 $stmt->execute();
 
 ?>
@@ -64,12 +64,12 @@ $stmt->execute();
                                     <td><?php echo $row["Mobile"]; ?></td>
                                     <td><?php echo $row["Mailinglist"]; ?></td>
                                     <td>
-                                        <a href="clients_modify.php?ID= <?php echo $row["ID"]; ?>
-                                        &Action=Update"><button class="btn btn-primary btn-xs">
-                                                <i class="fa fa-pencil" title="edit"></i></button>
-                                        <a href="clients_modify.php?ID= <?php echo
-                                        $row["ID"]; ?> &Action=Delete"><button class="btn btn-danger btn-xs">
-                                                <i class="fa fa-trash-o " title="delete"></i></button>
+
+                                        <a href="clients_modify.php?ID=<?php echo $row["ID"]; ?>&Action=Update"><button class="btn btn-primary btn-xs">
+                                                <i class="fa fa-pencil" title="Edit"></i></button>
+                                        <a href="clients_modify.php?ID=<?php echo
+                                        $row["ID"]; ?>&Action=Delete"><button class="btn btn-danger btn-xs">
+                                                <i class="fa fa-trash-o " title="Delete"></i></button>
 
                                     </td>
                                 </tr>

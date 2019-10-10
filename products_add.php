@@ -3,6 +3,10 @@ ob_start();
 include('session.php');
 include('nav.php');
 
+$catequery="SELECT * FROM category ORDER BY Name";
+$catestmt = $dbh->prepare($catequery);
+$catestmt->execute();
+
 if (empty($_POST["Name"]))
 {
 
@@ -52,6 +56,29 @@ if (empty($_POST["Name"]))
                                 <input type="text" class="form-control" name="Country_of_Origin">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Product Categories</label>
+                            <div class="col-sm-10" style="font-size: 15px">
+                                <table>
+                                    <tbody>
+                                    <?php
+                                    while($caterow = $catestmt->fetch())
+                                    {
+
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <span class="check"><input type="checkbox" name="check[]" value = "<?php echo $caterow['ID']; ?>" class="checked">
+                                                </span>
+                                                <?php echo $caterow["Name"];?>
+                                            </td>
+                                        </tr>
+                                    <?php }
+                                    ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                         <p align="left">
                             <button type="submit" class="btn btn-theme">Add Product</button>
                             <input type="Reset" Value="Clear Form Fields" class="btn btn-theme" style="background-color: darkorange">
@@ -71,8 +98,8 @@ else {
     $dsn= "mysql:host=$Host;dbname=$DB";
     $dbh= new PDO($dsn, $Uname, $Pword);
 
-    $query = "INSERT INTO product (Name, Purchase_Price, Sale_Price, Country_of_Origin) VALUES (NULLIF('$_POST[Name]', ''), '$_POST[Purchase_Price]'
-                , '$_POST[Sale_Price]', '$_POST[Country_of_Origin]')";
+    $query = "INSERT INTO product (Name, Purchase_Price, Sale_Price, Country_of_Origin) VALUES (NULLIF('$_POST[Name]', ''), NULLIF('$_POST[Purchase_Price]','')
+                , NULLIF('$_POST[Sale_Price]',''), '$_POST[Country_of_Origin]')";
     $stmt = $dbh->prepare($query);
     if(!$stmt->execute())
     {
@@ -95,8 +122,17 @@ else {
         <?php
     }
     else {
+        $pid = $dbh->lastInsertId();
+        foreach ($_POST["check"] as $item) {
+            $pc_add_query = "INSERT INTO product_category (product_id, category_id) VALUES (NULLIF($pid, ''),NULLIF($item, ''))";
+            $pc_add_stmt = $dbh->prepare($pc_add_query);
+            $pc_add_stmt->execute();
+        }
+
         $stmt->closeCursor();
-        header("Location: products_index.php");
+        $catestmt->closeCursor();
+        $pc_add_stmt->closeCursor();
+       header("Location: products_index.php");
     }
 }
 
