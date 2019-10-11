@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc18a84d-bfd5-481e-ad55-2aaab629206c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images_multiple.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product_images/20170606025244583.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product_images/532206-dell-inspiron-13-7000-2019-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product_images/Chinese-Fried-Rice-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product_images/coke-coca-cola-can-flickr-oleg-sklyanchuk-500.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product_images/download.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product_images/download.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product_images/images.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Ass2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Ass2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation.php" beforeDir="false" afterPath="$PROJECT_DIR$/documentation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/images_index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products_modify.php" beforeDir="false" afterPath="$PROJECT_DIR$/products_modify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/products_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -138,6 +121,7 @@
       <workItem from="1570749371029" duration="20323000" />
       <workItem from="1570777687619" duration="2569000" />
       <workItem from="1570780290803" duration="3957000" />
+      <workItem from="1570784524379" duration="16000" />
     </task>
     <servers />
   </component>
