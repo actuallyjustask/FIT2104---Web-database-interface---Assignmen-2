@@ -102,7 +102,7 @@ else
     $msg = $_POST["message"];
     $subject = $_POST["subject"];
 
-    if(mail($to, $subject,NULLIF($msg, '') , $from))
+    if(mail($to, $subject,NULLIF($msg, 'Message cant be null') , $from))
     { ?>
         <section id="main-content">
             <section class="wrapper">
