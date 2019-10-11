@@ -7,12 +7,12 @@ include('nav.php');
 <script language = "javascript">
     function confirm_delete()
     {
-        window.location='categories_modify.php?ID=<?php echo $_GET["ID"];?> &Action=ConfirmDelete'; }
+        window.location='images_modify.php?ID=<?php echo $_GET["ID"];?> &Action=ConfirmDelete'; }
 </script>
 
 <?php
 //include and connection statements go here
-$query="SELECT * FROM category WHERE ID =".$_GET["ID"];
+$query="SELECT * FROM product_image WHERE ID =".$_GET["ID"];
 
 include("connection.php");
 $dsn= "mysql:host=$Host;dbname=$DB";
@@ -20,6 +20,9 @@ $dbh= new PDO($dsn, $Uname, $Pword);
 $stmt = $dbh->prepare($query);
 $stmt->execute();
 $row=$stmt->fetchObject();
+$productquery="SELECT * FROM product ORDER BY Name";
+$productstmt = $dbh->prepare($productquery);
+$productstmt->execute();
 
 switch($_GET["Action"]) {
     case "Delete":
@@ -27,14 +30,14 @@ switch($_GET["Action"]) {
         <div align="center">
             </br></br></br></br></br>
             <h3>
-                Confirm deletion of the Category record <br /></h3>
+                Confirm deletion of the Image record <br /></h3>
             <table>
                 <tr>
-                    <td><h3>Category ID: </h3></td>
+                    <td><h3>Image ID: </h3></td>
                     <td><h3><?php echo $row->ID; ?></h3></td>
                 </tr>
                 <tr>
-                    <td><h3>Name:</h3></td>
+                    <td><h3>Image Name:</h3></td>
                     <td><h3><?php echo $row->Name?></h3></td>
                 </tr>
             </table>
@@ -44,7 +47,7 @@ switch($_GET["Action"]) {
             <tr>
 
                 <td>
-                    <input type="button" value="Cancel" class="btn btn-default" OnClick="window.location='Categories_index.php'">
+                    <input type="button" value="Cancel" class="btn btn-default" OnClick="window.location='images_index.php'">
                 </td>
                 <td>
                     <input type="button" value="Delete" class="btn btn-danger" OnClick="confirm_delete();">
@@ -53,7 +56,7 @@ switch($_GET["Action"]) {
         </table>
         <?php    break;
     case "ConfirmDelete":
-        $query="DELETE FROM category WHERE ID =".$_GET["ID"];
+        $query="DELETE FROM product_image WHERE ID =".$_GET["ID"];
 
         $stmt = $dbh->prepare($query);
         if($stmt->execute())
@@ -63,10 +66,10 @@ switch($_GET["Action"]) {
             </br></br></br></br></br>
 
             <h3 style="color: green">
-                The following category record has been successfully deleted!<br /></h3>
+                The following image record has been successfully deleted!<br /></h3>
             <table>
                 <tr>
-                    <td><h3>Category ID: </h3></td>
+                    <td><h3>Image ID: </h3></td>
                     <td><h3><?php echo $row->ID; ?></h3></td>
                 </tr>
                 <tr>
@@ -78,37 +81,52 @@ switch($_GET["Action"]) {
         }
         else
         {
-            echo "Error deleting category record";
+            echo "Error deleting image record";
         }?>
         </br>
         <?php
-        echo "<input type='button' value='Return to List' class=\"btn btn-primary\" OnClick='window.location=\"categories_index.php\"'><p />";
+        echo "<input type='button' value='Return to List' class=\"btn btn-primary\" OnClick='window.location=\"images_index.php\"'><p />";
         break;?>
         </div>
     <?php case "Update": ?>
     <section id="main-content">
         <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i> Categroies</h3>
+            <h3><i class="fa fa-angle-right"></i> Images</h3>
 
             <!-- BASIC FORM ELELEMNTS -->
             <div class="row mt">
                 <div class="col-lg-12">
                     <div class="form-panel">
-                        <h4 class="mb"><i class="fa fa-angle-right"></i> Category Details Amendment</h4>
-                        <form class="form-horizontal style-form" method="post" action="categories_modify.php?ID=<?php echo $_GET["ID"]; ?>&Action=ConfirmUpdate" >
+                        <h4 class="mb"><i class="fa fa-angle-right"></i> Image Details Amendment</h4>
+                        <form class="form-horizontal style-form" method="post" action="images_modify.php?ID=<?php echo $_GET["ID"]; ?>&Action=ConfirmUpdate" >
 
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="Name" value="<?php echo $row->Name; ?>">
-                                </div>
+                                <tr>
+                                    <div class="col-lg-3">
+                                        <td><b>Products</b><br>
+                                            <select class="form-control" name="product">
+                                                <?php
+                                                while($productrow = $productstmt->fetch())
+                                                {
+
+                                                ?>
+                                <tr>
+                                    <td>
+                                                <span class="check">
+                                                    <option name= "product" value="<?php echo $productrow['ID']; ?>"><?php echo $productrow['Name']; ?></option>
+                                                </span>
+
+                                    </td>
+                                </tr>
+                                <?php }
+                                ?>
+                                <p align="left">
+                                    <input type="submit" class="btn btn-theme" value="Update">
+                                </p>
                             </div>
 
 
-                            <p align="left">
-                                <button type="submit" class="btn btn-theme">Update Category</button>
-                                <input type="button" value="Return to List" class="btn btn-theme" style="background-color: darkorange" OnClick="window.location='categories_index.php'">
-                            </p>
+
 
                         </form>
                     </div>
@@ -119,7 +137,7 @@ switch($_GET["Action"]) {
     <?php
     break;
     case "ConfirmUpdate":
-        $query="UPDATE category set Name='$_POST[Name]' WHERE ID =".$_GET["ID"];
+        $query="UPDATE product_image set Product_id='$_POST[product]' WHERE ID =".$_GET["ID"];
         $stmt = $dbh->prepare($query);
 
         if(!$stmt->execute())
@@ -144,7 +162,7 @@ switch($_GET["Action"]) {
         }
         else {
             $stmt->closeCursor();
-            header("Location: categories_index.php");
+            header("Location: images_index.php");
         }
 }
 

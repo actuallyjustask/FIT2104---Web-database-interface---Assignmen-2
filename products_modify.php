@@ -39,7 +39,10 @@ $row=$stmt->fetchObject();
 $catestmt = $dbh->prepare($catequery);
 $catestmt->execute();
 
-
+$imgquery= "SELECT * from product join product_image on product.ID = product_image.product_id Where product.ID = $_GET[ID]";
+$imgstmt = $dbh->prepare($imgquery);
+$imgstmt->execute();
+$imgrow = $imgstmt->fetch();
 
 
 
@@ -47,9 +50,11 @@ switch($_GET["Action"]) {
     case "Delete":
         ?>
         <div align="center">
+
             </br></br></br></br></br>
             <h3>
                 Confirm deletion of the Product record <br /></h3>
+
             <table>
                 <tr>
                     <td><h3>Product ID: </h3></td>
@@ -59,10 +64,24 @@ switch($_GET["Action"]) {
                     <td><h3>Name:</h3></td>
                     <td><h3><?php echo $row->Name?></h3></td>
                 </tr>
+                <tr>
+                    <td>
+                    <div class="col-sm-10">
+                        <a target="_blank" href="product_images/<?php echo $imgrow["Name"]?>">
+                            <img src="product_images/<?php echo $imgrow["Name"]?>" alt="Forest" style="width:150px">
+                        </a>
+                    </div>
+                    <td>
+                </tr>
             </table>
             <br/>
+
         </div>
+
+
+
         <table align="center">
+
             <tr>
 
                 <td>
@@ -76,12 +95,17 @@ switch($_GET["Action"]) {
         <?php    break;
     case "ConfirmDelete":
         $query="DELETE FROM product WHERE ID =".$_GET["ID"];
-
         $stmt = $dbh->prepare($query);
-
         $pc_del_query = "DELETE FROM product_category WHERE product_id = $_GET[ID];";
         $pc_del_stmt = $dbh->prepare($pc_del_query);
         $pc_del_stmt->execute();
+
+        $img_id = $imgrow['ID'];
+
+        $img_del_query = "DELETE FROM product_image WHERE ID = $img_id";
+
+        $imgstmt = $dbh->prepare($imgquery);
+        $imgstmt->execute();
 
 
         if($stmt->execute())
@@ -89,7 +113,6 @@ switch($_GET["Action"]) {
             ?>
             <div align="center">
             </br></br></br></br></br>
-
             <h3 style="color: green">
                 The following product record has been successfully deleted!<br /></h3>
             <table>
@@ -102,6 +125,7 @@ switch($_GET["Action"]) {
                     <td><h3><?php echo $row->Name; ?></h3></td>
                 </tr>
             </table>
+
             <?php
         }
         else
@@ -181,6 +205,14 @@ switch($_GET["Action"]) {
                                     </table>
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Images</label>
+                                <div class="col-sm-10">
+                                    <p class="form-control-static">Please Go to 'Images' sction to edit image.</p>
+                                </div>
+                            </div>
+
                             <p align="left">
                                 <button type="submit" class="btn btn-theme">Update Product</button>
                                 <input type="button" value="Return to List" class="btn btn-theme" style="background-color: darkorange" OnClick="window.location='products_index.php'">
@@ -231,8 +263,10 @@ switch($_GET["Action"]) {
         else {
             $stmt->closeCursor();
             $catestmt->closeCursor();
+            $imgstmt->closeCursor();
             $pc_del_stmt->closeCursor();
             $pc_add_stmt->closeCursor();
+            $img_del_query->closeCursor();
 
             header("Location: products_index.php");
         }

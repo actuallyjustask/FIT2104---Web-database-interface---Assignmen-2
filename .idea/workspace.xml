@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc18a84d-bfd5-481e-ad55-2aaab629206c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/clients_email.php" beforeDir="false" afterPath="$PROJECT_DIR$/clients_email.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CreatePDF.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients_pdf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store.db.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upload_image.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9db62ff3-c254-472e-8179-d5f4bb782a32.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9db62ff3-c254-472e-8179-d5f4bb782a32.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blank.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/clients_add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/clients_index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation.php" beforeDir="false" afterPath="$PROJECT_DIR$/documentation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/images_add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/images_index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images_modify.php" beforeDir="false" afterPath="$PROJECT_DIR$/images_modify.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products_modify.php" beforeDir="false" afterPath="$PROJECT_DIR$/products_modify.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/products_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_page.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,13 +59,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="s28405692: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="FIT2104" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="s28405692: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="client: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -62,12 +72,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\XAMPP\htdocs\Ass2" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\XAMPP\htdocs\Ass2" />
       <recent name="E:\XAMPP\htdocs\Ass2\clients" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\XAMPP\htdocs\Ass2" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -86,7 +96,17 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@303b94ca" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@303b94ca" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@2faee1ef" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -108,7 +128,7 @@
       <workItem from="1570519747124" duration="17600000" />
       <workItem from="1570699779158" duration="269000" />
       <workItem from="1570700554656" duration="14280000" />
-      <workItem from="1570749371029" duration="1254000" />
+      <workItem from="1570749371029" duration="20323000" />
     </task>
     <servers />
   </component>

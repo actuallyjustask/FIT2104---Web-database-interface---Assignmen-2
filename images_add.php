@@ -2,85 +2,147 @@
 ob_start();
 include('session.php');
 include('nav.php');
+include("connection.php");
 
-if (empty($_POST["Name"]))
-{
-
+$productquery="SELECT * FROM product ORDER BY Name";
+$productstmt = $dbh->prepare($productquery);
+$productstmt->execute();
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Categories</title>
+    <title>Images</title>
 </head>
-
-
 <body>
 
-<section id="main-content">
-    <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> Categories</h3>
-
-        <!-- BASIC FORM ELELEMNTS -->
-        <div class="row mt">
-            <div class="col-lg-12">
-                <div class="form-panel">
-                    <h4 class="mb"><i class="fa fa-angle-right"></i> Add Category</h4>
-                    <form class="form-horizontal style-form" method="post" action="categories_add.php" >
+<section id="container" >
+    <section id="main-content">
+        <section class="wrapper site-min-height">
+            <h3><i class="fa fa-angle-right"></i> Images Uploade</h3>
+            <div class="row mt">
+                <div class="col-lg-12">
+                    <?php
+                    if (!isset($_FILES["userfile"]["tmp_name"]))
+                    {
+                    ?>
+                    <form method="post" enctype="multipart/form-data" action="images_add.php">
                         <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Category Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="Name">
-                            </div>
+                            <tr>
+                                <div class="col-lg-3">
+                                <td><b>Select a file to upload:</b><br><input type="file" size="50" name="userfile" class="btn btn-default"></td>
+                                </div>
+                            </tr>
+                            <tr>
+                                    <div class="col-lg-3">
+                                        <td><b>Products</b><br>
+                                <select class="form-control" name="product">
+                                    <?php
+                                    while($productrow = $productstmt->fetch())
+                                    {
+
+                                    ?>
+                                    <tr>
+                                        <td>
+                                                <span class="check">
+                                                    <option name= "product" value="<?php echo $productrow['ID']; ?>"><?php echo $productrow['Name']; ?></option>
+                                                </span>
+
+                                        </td>
+                                    </tr>
+                            <?php }
+                            ?>
+
                         </div>
 
                         <p align="left">
-                            <button type="submit" class="btn btn-theme">Add Category</button>
-                            <input type="Reset" Value="Clear Form Fields" class="btn btn-theme" style="background-color: darkorange">
+                            <input type="submit" value="Upload File"  class="btn btn-warning">
                         </p>
-
                     </form>
+
                 </div>
-            </div><!-- col-lg-12-->
-        </div><!-- /row -->
-    </section>
+            </div>
+
+        </section><! --/wrapper -->
+    </section><!-- /MAIN CONTENT -->
+
 </section>
 
-<?php include('footer.php');
-}
-else {
-    include("connection.php");
-    $dsn= "mysql:host=$Host;dbname=$DB";
-    $dbh= new PDO($dsn, $Uname, $Pword);
 
-    $query = "INSERT INTO category (Name) VALUES (NULLIF('$_POST[Name]', ''))";
-    $stmt = $dbh->prepare($query);
-    if(!$stmt->execute())
+
+
+<?php
+}
+else
+{
+    $upfile = "product_images/".$_FILES["userfile"]["name"];
+
+    if($_FILES["userfile"]["type"] != "image/gif" && $_FILES["userfile"]["type"] != "image/pjpeg" && $_FILES["userfile"]["type"] != "image/jpeg" && $_FILES["userfile"]["type"] != "image/png" && $_FILES["userfile"]["type"] != "image/pdf")
     {
-        $err= $stmt->errorInfo(); ?>
-        <section id="main-content">
-            <section class="wrapper">
-                <h4>
-                    <?php
-                    echo "Error adding record to database – contact System Administrator
+        echo "ERROR: You may only upload .jpg .png or .gif files";
+    }
+    else
+    {
+        if(!move_uploaded_file($_FILES["userfile"]["tmp_name"],$upfile))
+        {
+            echo "ERROR: Could Not Move File into Directory";
+        }
+        else
+        {
+            ?><h3 style="color: green">Image Upload Successfully!</h3><?php
+            echo "File Name: " .$_FILES["userfile"]["name"]."<br />";
+            $imagename="'".$_FILES["userfile"]["name"]."'";
+            $dsn= "mysql:host=$Host;dbname=$DB";
+            $dbh= new PDO($dsn, $Uname, $Pword);
+            $query = "INSERT INTO product_image (Product_id, Name) VALUES ($_POST[product],$imagename)";
+            $stmt = $dbh->prepare($query);
+            if(!$stmt->execute())
+            {
+                $err= $stmt->errorInfo(); ?>
+                        <h4>
+                            <?php
+                            echo "Error adding record to database – contact System Administrator
     Error is: <b>".$err[2]."</b>"; ?></h4>
-                <div>
-                    <button class="btn btn-default" onclick="goBack()">Go Back</button>
-                    <script>
-                        function goBack() {
-                            window.history.back();
-                        }
-                    </script></div>
-            </section></section>
+                        <div>
+                            <button class="btn btn-default" onclick="goBack()">Go Back</button>
+                            <script>
+                                function goBack() {
+                                    window.history.back();
+                                }
+                            </script></div>
 
-        <?php
+                <?php
+            }
+            else {
+                $imageid = $dbh->lastInsertId();
+
+
+
+                $stmt->closeCursor();
+                header("Location: images_index.php");
+            }
+        }
     }
-    else {
-        $stmt->closeCursor();
-        header("Location: categories_index.php");
+
+    $currdir = dirname($_SERVER["SCRIPT_FILENAME"])."/product_images";
+
+    $dir = opendir($currdir);
+
+    echo "<br /><br />";
+    echo "<h1>Contents of Uploads Directory</h1>";
+    while($file = readdir($dir))
+    {
+        if($file == "." || $file =="..")
+        {
+            continue;
+        }
+        echo $file."<br />";
     }
+    closedir($dir);
 }
-
 ?>
+<p align="left">   <br />
+    <input type="button" value="Return to List" class="btn btn-theme" style="background-color: darkorange" OnClick="window.location='images_index.php'">
+</p>
+<?php include('footer.php') ?>
 </body>
 </html>

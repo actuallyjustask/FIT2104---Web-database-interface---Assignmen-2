@@ -56,7 +56,7 @@ if (empty($_POST["Fname"]))
                               <label class="col-sm-2 col-sm-2 control-label">State</label>
                               <div class="col-sm-10">
                                   <select class="form-control" name="State">
-<!--                                      preselect vic-->
+                                      <!--                                      preselect vic-->
                                       <option>ACT</option>
                                       <option>NSW</option>
                                       <option>NT</option>

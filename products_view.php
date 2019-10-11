@@ -45,8 +45,11 @@ Where product.ID = $_GET[ID] ORDER BY category.Name";
 $pcstmt = $dbh->prepare($pcquery);
 $pcstmt->execute();
 
+$imgquery= "SELECT product_image.Name from product join product_image on product.ID = product_image.product_id Where product.ID = $_GET[ID]";
+$imgstmt = $dbh->prepare($imgquery);
 
-
+$imgstmt->execute();
+$imgrow = $imgstmt->fetch();
 
 ?>
 <section id="main-content">
@@ -107,6 +110,14 @@ $pcstmt->execute();
                                 </table>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Image</label>
+                            <div class="col-sm-10">
+                                <a target="_blank" href="product_images/<?php echo $imgrow["Name"]?>">
+                                    <img src="product_images/<?php echo $imgrow["Name"]?>" alt="Forest" style="width:150px">
+                                </a>
+                            </div>
+                        </div>
 
 
                         <div>
@@ -128,4 +139,8 @@ $pcstmt->execute();
     </section>
 </section>
 
-<?php include('footer.php')?>
+<?php include('footer.php');
+$imgstmt->closeCursor();
+$catestmt->closeCursor();
+$stmt->closeCursor();
+?>
