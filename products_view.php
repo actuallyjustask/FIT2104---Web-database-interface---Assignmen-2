@@ -112,11 +112,16 @@ $imgrow = $imgstmt->fetch();
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Image</label>
+                            <?php if (!empty($imgrow["Name"])){ ?>
                             <div class="col-sm-10">
                                 <a target="_blank" href="product_images/<?php echo $imgrow["Name"]?>">
                                     <img src="product_images/<?php echo $imgrow["Name"]?>" alt="Forest" style="width:150px">
                                 </a>
                             </div>
+                            <?php }
+                            else {
+
+                            }?>
                         </div>
 
 

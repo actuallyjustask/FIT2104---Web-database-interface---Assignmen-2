@@ -66,11 +66,17 @@ switch($_GET["Action"]) {
                 </tr>
                 <tr>
                     <td>
+                        <?php if (!empty($imgrow["Name"])){ ?>
                     <div class="col-sm-10">
                         <a target="_blank" href="product_images/<?php echo $imgrow["Name"]?>">
                             <img src="product_images/<?php echo $imgrow["Name"]?>" alt="Forest" style="width:150px">
                         </a>
                     </div>
+                        <?php }
+                        else {
+
+                        }?>
+
                     <td>
                 </tr>
             </table>
@@ -266,7 +272,7 @@ switch($_GET["Action"]) {
             $imgstmt->closeCursor();
             $pc_del_stmt->closeCursor();
             $pc_add_stmt->closeCursor();
-            $img_del_query->closeCursor();
+
 
             header("Location: products_index.php");
         }

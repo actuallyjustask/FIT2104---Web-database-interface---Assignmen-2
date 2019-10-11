@@ -126,6 +126,7 @@
                     <ul class="sub" style="overflow: hidden; display: block;">
                         <li><a href="images_index.php">View Images</a></li>
                         <li><a href="images_add.php">Add Images</a></li>
+                        <li><a href="images_multiple.php">Multiple Images</a></li>
                     </ul>
                 </li>
 

@@ -31,7 +31,7 @@ include('nav.php');
                 <br/>
                 <h4>Chaojie Chen [28405692]</h4>
                 <h4>Arsalan Shahid [29808677]</h4>
-                <h4><b>Due By: 11/10/2019</b></h4>
+                <h4><b>Submission Date: 11/10/2019</b></h4>
             </div>
             <div class="showback">
                 <h3><i class="fa fa-angle-right"></i> Website Account</h3>
@@ -52,16 +52,16 @@ include('nav.php');
             </div>
 
             <div class="showback">
-                <h3><i class="fa fa-angle-right"></i> Create Table statements</h3>
+                <h3><i class="fa fa-angle-right"></i> Database Schema (Create Table Statement)</h3>
                 <br/>
                 <h4><a href="store.db.sql">store.db.sql</a></h4>
 
             </div>
 
             <div class="showback">
-                <h3><i class="fa fa-angle-right"></i> Database Data</h3>
+                <h3><i class="fa fa-angle-right"></i> Database snapshot </h3>
                 <br/>
-                <h4>Host: 130.194.7.82</h4>
+                <h4><a href="Database_Snapshot.zip">Database_Snapshot.zip</a></h4>
 
 
             </div>
@@ -69,7 +69,7 @@ include('nav.php');
             <div class="showback">
                 <h3><i class="fa fa-angle-right"></i> Work breakdown</h3>
                 <br/>
-                <h4>Host: 130.194.7.82</h4>
+                <h4><a href="Work_Breakdown.txt">Work_Breakdown.txt</a></h4>
 
 
             </div>

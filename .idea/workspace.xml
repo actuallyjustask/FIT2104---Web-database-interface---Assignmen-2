@@ -2,24 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc18a84d-bfd5-481e-ad55-2aaab629206c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CreatePDF.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clients_pdf.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store.db.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload_image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9db62ff3-c254-472e-8179-d5f4bb782a32.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9db62ff3-c254-472e-8179-d5f4bb782a32.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images_multiple.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product_images/20170606025244583.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product_images/532206-dell-inspiron-13-7000-2019-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product_images/Chinese-Fried-Rice-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product_images/coke-coca-cola-can-flickr-oleg-sklyanchuk-500.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product_images/download.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product_images/download.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product_images/images.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Ass2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Ass2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blank.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/clients_add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/clients_index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/documentation.php" beforeDir="false" afterPath="$PROJECT_DIR$/documentation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/images_add.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/images_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/images_index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images_modify.php" beforeDir="false" afterPath="$PROJECT_DIR$/images_modify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/nav.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products_modify.php" beforeDir="false" afterPath="$PROJECT_DIR$/products_modify.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/products_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_page.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +27,8 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
@@ -65,19 +66,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
   <component name="ProjectId" id="1RoaSQbn6wV75XhVas9hvvsGVAK" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\XAMPP\htdocs\Ass2" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\XAMPP\htdocs\Ass2" />
       <recent name="E:\XAMPP\htdocs\Ass2\clients" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\XAMPP\htdocs\Ass2" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -99,12 +106,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@303b94ca" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@df9707d6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@303b94ca" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@2faee1ef" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@df9707d6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@36c70fe4" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -129,6 +136,8 @@
       <workItem from="1570699779158" duration="269000" />
       <workItem from="1570700554656" duration="14280000" />
       <workItem from="1570749371029" duration="20323000" />
+      <workItem from="1570777687619" duration="2569000" />
+      <workItem from="1570780290803" duration="3957000" />
     </task>
     <servers />
   </component>

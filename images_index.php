@@ -71,9 +71,9 @@ $stmt->execute();
                                     <td><?php echo $row["ID"]; ?></td>
                                     <td><?php echo $row["Name"]; ?></td>
                                     <td>
-                                    <a target="_blank" href="product_images/<?php echo $row["Name"]?>">
-                                        <img src="product_images/<?php echo $row["Name"]?>" alt="Forest" style="width:150px">
-                                    </a></td>
+                                        <a target="_blank" href="product_images/<?php echo $row["Name"]?>">
+                                            <img src="product_images/<?php echo $row["Name"]?>" alt="Forest" style="width:150px">
+                                        </a></td>
                                     <td><?php echo $productrow["Name"]; ?></td>
                                     <td>
                                         <a href="images_modify.php?ID=<?php echo $row["ID"]; ?>&Action=Update"><button class="btn btn-primary btn-xs">
@@ -98,7 +98,7 @@ $stmt->execute();
     </section><! --/wrapper -->
 </section><!-- /MAIN CONTENT -->
 <?php include('footer.php');
-$productstmt->closeCursor();
+
 $stmt->closeCursor();
 
 ?>
