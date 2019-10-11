@@ -20,7 +20,7 @@ $clientsquery="SELECT * FROM client WHERE Mailinglist='1';";
 $clientsstmt = $dbh->prepare($clientsquery);
 $clientsstmt->execute();
 
-if (!isset($_POST["check"]) && !isset($_POST["message"]))
+if (!isset($_POST["check"]))
 {
     ?>
 <section id="main-content">
@@ -31,7 +31,6 @@ if (!isset($_POST["check"]) && !isset($_POST["message"]))
                 <div class="form-panel">
                     <h4><i class="fa fa-angle-right"></i> Send Email</h4>
                     <form class="form-horizontal style-form" method="post" action="clients_email.php">
-
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">To</label>
@@ -103,7 +102,7 @@ else
     $msg = $_POST["message"];
     $subject = $_POST["subject"];
 
-    if(mail($to, $subject, $msg, $from))
+    if(mail($to, $subject,NULLIF($msg, '') , $from))
     { ?>
         <section id="main-content">
             <section class="wrapper">
